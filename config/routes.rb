@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   #sets all to api/
   scope path: "api" do
-    resources :porridges, defaults: {format: :json}
+    resources :porridges, defaults: {:format => :json}
   end
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

@@ -3,8 +3,12 @@ class PorridgesController < ApplicationController
 #routes are api/ when you set the scope to api in the config/routes
 
   def index
+    respond_to do |format|
+      format.html
+      format.json {render json: Show.all}
+
     @porridges = Porridge.all
-    render :json => @porridges.as_json
+    
   end
 
   
@@ -15,14 +19,14 @@ class PorridgesController < ApplicationController
 
  
   def create
-    porridge = Porridge.create( animal_params )
+    porridge = Porridge.create( porridge_params )
     render :json => porridge
   end
 
   
   def update
     porridge = Porridge.find(params[:id])
-    if porridge.update_attributes(animal_params)
+    if porridge.update_attributes(porridge_params)
       render json: porridge
     else
       render json: {status: :update_failed}
@@ -40,4 +44,4 @@ class PorridgesController < ApplicationController
   end
 end
 
-#can do params.require(:porridge).permit(-array of :params ) in a private function to prevent/allow changing data
+#can do params.require(:porridge). permit(-array of :params ) in a private function to prevent/allow changing data
