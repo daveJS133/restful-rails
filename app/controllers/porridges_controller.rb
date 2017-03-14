@@ -7,7 +7,7 @@ class PorridgesController < ApplicationController
       format.html
       format.json {render json: Show.all}
 
-      @porridges = Porridge.all
+      # porridges = Porridge.all - using Show.all instead
       
     end
   end
