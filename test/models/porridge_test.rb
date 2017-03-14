@@ -6,14 +6,14 @@ class PorridgeTest < ActiveSupport::TestCase
   end
 
   # test "Porridges has a prep time" do
-  #  assert animals(:one).move == "walk"
+  #  
   # end
 
   # test "Porridges has a cook time" do
-  #   assert animals(:two).move == "slither"
+  #   
   # end
 
   # test "Porridges has a description" do
-  #   assert animals(:two).move == "slither"
+  #   
   # end
 end
