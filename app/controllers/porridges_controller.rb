@@ -7,8 +7,9 @@ class PorridgesController < ApplicationController
       format.html
       format.json {render json: Show.all}
 
-    @porridges = Porridge.all
-    
+      @porridges = Porridge.all
+      
+    end
   end
 
   
@@ -17,7 +18,7 @@ class PorridgesController < ApplicationController
     render :json => @porridge.as_json
   end
 
- 
+
   def create
     porridge = Porridge.create( porridge_params )
     render :json => porridge
@@ -33,7 +34,7 @@ class PorridgesController < ApplicationController
     end
   end
 
- 
+
   def destroy
     porridge = Porridge.find(params[:id])
     if porridge.destroy!
@@ -43,5 +44,3 @@ class PorridgesController < ApplicationController
     end
   end
 end
-
-#can do params.require(:porridge). permit(-array of :params ) in a private function to prevent/allow changing data
