@@ -1,0 +1,11 @@
+notes
+rails new ----
+rake db:create
+rake db:migrate
+rails server
+routes config
+now app/controller file inherits from application controller
+create route methods
+eg. index 
+render whatever
+create a model before making databse
